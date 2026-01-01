@@ -55,111 +55,69 @@ export function PortalShowcase() {
   const [activeTab, setActiveTab] = useState("onboarding")
 
   return (
-    <section className="py-20 bg-background">
+    <section className="py-20 bg-white">
       <div className="max-w-[1120px] mx-auto px-4">
-        <div className="bg-gradient-to-br from-teal-900 to-teal-800 rounded-3xl p-16 relative">
-          {/* Animated/Glowing 3D Menu Bar */}
-          <div className="flex justify-center mb-12">
-            <motion.nav
-              className="p-2 rounded-2xl bg-gradient-to-b from-background/80 to-background/40 backdrop-blur-lg border border-border/40 shadow-lg relative overflow-hidden"
-              initial="initial"
-              whileHover="hover"
-            >
-              <motion.div
-                className="absolute -inset-2 bg-gradient-radial from-transparent via-blue-400/10 via-30% via-purple-400/10 via-60% via-red-400/10 via-90% to-transparent rounded-3xl z-0 pointer-events-none"
-                variants={navGlowVariants}
-              />
-              <ul className="flex items-center gap-2 relative z-10">
-                {menuItems.map((item) => {
-                  const isActive = activeTab === item.id
-                  return (
-                    <motion.li key={item.label} className="relative">
-                      <motion.div
-                        className="block rounded-xl overflow-visible group relative"
-                        style={{ perspective: "600px" }}
-                        whileHover="hover"
-                        initial="initial"
-                        onClick={() => setActiveTab(item.id)}
-                      >
-                        <motion.div
-                          className="absolute inset-0 z-0 pointer-events-none"
-                          variants={glowVariants}
-                          style={{
-                            background: item.gradient,
-                            opacity: isActive ? 1 : 0,
-                            borderRadius: "16px",
-                          }}
-                        />
-                        <motion.button
-                          type="button"
-                          className={cn(
-                            "flex items-center gap-2 px-4 py-2 relative z-10 bg-transparent text-muted-foreground group-hover:text-foreground transition-colors rounded-xl cursor-pointer",
-                            isActive ? item.iconColor + " text-foreground" : ""
-                          )}
-                          variants={itemVariants}
-                          transition={sharedTransition}
-                          style={{ transformStyle: "preserve-3d", transformOrigin: "center bottom" }}
-                          tabIndex={0}
-                        >
-                          <span>{item.icon}</span>
-                          <span>{item.label}</span>
-                        </motion.button>
-                        <motion.button
-                          type="button"
-                          className={cn(
-                            "flex items-center gap-2 px-4 py-2 absolute inset-0 z-10 bg-transparent text-muted-foreground group-hover:text-foreground transition-colors rounded-xl cursor-pointer",
-                            isActive ? item.iconColor + " text-foreground" : ""
-                          )}
-                          variants={backVariants}
-                          transition={sharedTransition}
-                          style={{ transformStyle: "preserve-3d", transformOrigin: "center top", rotateX: 90 }}
-                          tabIndex={0}
-                        >
-                          <span>{item.icon}</span>
-                          <span>{item.label}</span>
-                        </motion.button>
-                      </motion.div>
-                    </motion.li>
-                  )
-                })}
-              </ul>
-            </motion.nav>
+        {/* Full-width gradient panel with rounded corners and shadows */}
+        <div className="bg-gradient-to-b from-teal-700 via-teal-800 to-emerald-900 rounded-[32px] p-14 relative shadow-2xl shadow-teal-900/20">
+
+          {/* Glassmorphism Pill Switcher - 80-100px from top */}
+          <div className="flex justify-center mb-16 pt-6">
+            <nav className="inline-flex items-center gap-1 p-1.5 rounded-full bg-teal-500/20 backdrop-blur-md border border-teal-400/30 shadow-lg">
+              {menuItems.map((item) => {
+                const isActive = activeTab === item.id
+                return (
+                  <button
+                    key={item.label}
+                    type="button"
+                    onClick={() => setActiveTab(item.id)}
+                    className={cn(
+                      "flex items-center gap-2 px-5 py-2.5 rounded-full transition-all duration-300 text-sm font-medium",
+                      isActive
+                        ? "bg-teal-400/40 text-teal-50 shadow-md shadow-teal-500/20"
+                        : "text-teal-200/80 hover:text-teal-100 hover:bg-teal-500/10"
+                    )}
+                  >
+                    <span className={cn("w-4 h-4", isActive ? "text-teal-100" : "text-teal-300/70")}>
+                      {item.icon}
+                    </span>
+                    <span>{item.label}</span>
+                  </button>
+                )
+              })}
+            </nav>
           </div>
 
-          {/* Portal Showcase Content */}
-          <div className="relative h-96 md:h-[500px]">
+          {/* Portal Showcase Content - 56-72px below pill */}
+          <div className="relative h-96 md:h-[500px] px-6">
             {/* Onboarding Tab */}
             {activeTab === "onboarding" && (
-              <div className="flex items-center justify-center h-full w-full bg-gradient-to-br from-teal-900 to-teal-800 rounded-3xl overflow-hidden">
+              <div className="flex items-center justify-center h-full w-full">
                 <img
                   src="/portal.png"
                   alt="Portal Onboarding Showcase"
-                  className="object-contain w-full h-full max-h-full max-w-full"
-                  style={{ borderRadius: '2rem' }}
+                  className="object-contain w-full h-full max-h-full max-w-full rounded-[20px] shadow-2xl shadow-black/30"
                 />
               </div>
             )}
 
             {/* Client Portal Tab */}
             {activeTab === "client" && (
-              <div className="flex items-center justify-center h-full w-full bg-gradient-to-br from-teal-900 to-teal-800 rounded-3xl overflow-hidden">
+              <div className="flex items-center justify-center h-full w-full">
                 <img
                   src="/Attached_image.png"
                   alt="Client Portal Showcase"
-                  className="object-contain w-full h-full max-h-full max-w-full"
-                  style={{ borderRadius: '2rem' }}
+                  className="object-contain w-full h-full max-h-full max-w-full rounded-[20px] shadow-2xl shadow-black/30"
                 />
               </div>
             )}
 
             {/* Partner/Deal Space Tab */}
             {activeTab === "partner" && (
-              <div className="flex items-center justify-center h-full w-full bg-gradient-to-br from-teal-900 to-teal-800 rounded-3xl overflow-hidden">
+              <div className="flex items-center justify-center h-full w-full">
                 <img
                   src="/portal%20deal%20space.png"
                   alt="Partner or Deal Space Showcase"
-                  className="object-contain w-full h-full max-h-full max-w-full"
-                  style={{ borderRadius: '2rem' }}
+                  className="object-contain w-full h-full max-h-full max-w-full rounded-[20px] shadow-2xl shadow-black/30"
                 />
               </div>
             )}
