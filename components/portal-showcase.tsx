@@ -9,9 +9,9 @@ import { FlowButton } from "@/components/FlowButton"
 
 
 const menuItems = [
-  { label: "Onboarding", id: "onboarding", icon: "↪" },
-  { label: "Client Portal", id: "client", icon: "🌀" },
-  { label: "Partner or Deal Space", id: "partner", icon: "🤝" },
+  { label: "Onboarding", id: "onboarding" },
+  { label: "Client Portal", id: "client" },
+  { label: "Partner or Deal Space", id: "partner" },
 ]
 
 export function PortalShowcase() {
@@ -19,7 +19,7 @@ export function PortalShowcase() {
 
   return (
     <section className="relative bg-white py-20">
-      <div className="max-w-[1120px] mx-auto px-4 lg:px-6">
+      <div className="max-w-[1240px] mx-auto px-4 lg:px-6">
         <div
           className="
             relative
@@ -41,13 +41,12 @@ export function PortalShowcase() {
                     key={item.id}
                     onClick={() => setActiveTab(item.id)}
                     className={cn(
-                      "flex items-center gap-2 rounded-full px-6 py-2 text-sm font-medium transition-all duration-300",
+                      "rounded-full px-6 py-2 text-sm font-medium transition-all duration-300",
                       isActive
                         ? "bg-white/90 text-slate-900 shadow-inner"
                         : "text-white/80 hover:text-white"
                     )}
                   >
-                    <span className="text-lg">{item.icon}</span>
                     <span>{item.label}</span>
                   </button>
                 )
@@ -61,9 +60,9 @@ export function PortalShowcase() {
               relative
               mx-auto
               mt-8
-              px-10
+              px-6 sm:px-14
               pb-0
-              max-w-5xl
+              max-w-6xl
               translate-y-4
               flex
               items-end
