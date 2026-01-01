@@ -7,7 +7,6 @@ import { cn } from "@/lib/utils"
 import React from "react"
 import { FlowButton } from "@/components/FlowButton"
 
-import { PortalMockupUI } from "./portal-mockup-ui"
 
 const menuItems = [
   { label: "Onboarding", id: "onboarding" },
@@ -21,11 +20,11 @@ export function PortalShowcase() {
   return (
     <section className="py-20 bg-white">
       <div className="max-w-[1120px] mx-auto px-4">
-        {/* Tall gradient panel filling most of viewport height */}
-        <div className="bg-gradient-to-b from-teal-700 via-teal-800 to-emerald-900 rounded-[32px] relative shadow-2xl shadow-teal-900/20 min-h-[85vh] flex flex-col overflow-hidden">
+        {/* Panel wrapping content tightly to endpoint immediately under mockup */}
+        <div className="bg-gradient-to-b from-teal-700 via-teal-800 to-emerald-900 rounded-[32px] relative shadow-2xl shadow-teal-900/20 overflow-hidden">
 
           {/* Glassmorphism Pill Switcher - 80-100px from top */}
-          <div className="flex justify-center pt-20 pb-8">
+          <div className="flex justify-center pt-20">
             <nav className="inline-flex items-center gap-1 p-1.5 rounded-full bg-white/10 backdrop-blur-xl border border-white/20 shadow-2xl">
               {menuItems.map((item) => {
                 const isActive = activeTab === item.id
@@ -48,10 +47,42 @@ export function PortalShowcase() {
             </nav>
           </div>
 
-          {/* Portal Showcase Content - pushed to bottom with minimal gap (4px) */}
-          <div className="flex-1 relative px-14 pb-1 flex items-end">
-            <div className="w-full h-[620px]">
-              <PortalMockupUI activeTab={activeTab} />
+          {/* Portal Showcase Content - Tighter Framing (Camera Zoom) */}
+          <div className="relative px-14 pt-16 pb-1 flex justify-center items-end overflow-hidden">
+            {/* Inner container to hold mockup height precisely */}
+            <div className="w-full h-[620px] relative flex items-end">
+              {/* Onboarding Tab */}
+              {activeTab === "onboarding" && (
+                <div className="w-full h-full animate-in fade-in duration-500">
+                  <img
+                    src="/portal.png"
+                    alt="Portal Onboarding Showcase"
+                    className="object-contain object-bottom w-full h-full rounded-t-[20px] shadow-2xl shadow-black/40 translate-y-1"
+                  />
+                </div>
+              )}
+
+              {/* Client Portal Tab */}
+              {activeTab === "client" && (
+                <div className="w-full h-full animate-in fade-in duration-500">
+                  <img
+                    src="/Attached_image.png"
+                    alt="Client Portal Showcase"
+                    className="object-contain object-bottom w-full h-full rounded-t-[20px] shadow-2xl shadow-black/40 translate-y-1"
+                  />
+                </div>
+              )}
+
+              {/* Partner/Deal Space Tab */}
+              {activeTab === "partner" && (
+                <div className="w-full h-full animate-in fade-in duration-500">
+                  <img
+                    src="/portal%20deal%20space.png"
+                    alt="Partner or Deal Space Showcase"
+                    className="object-contain object-bottom w-full h-full rounded-t-[20px] shadow-2xl shadow-black/40 translate-y-1"
+                  />
+                </div>
+              )}
             </div>
           </div>
         </div>
