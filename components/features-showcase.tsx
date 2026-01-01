@@ -42,8 +42,8 @@ export function FeaturesShowcase() {
   }
 
   return (
-    <section className="w-full bg-white py-16 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-7xl mx-auto">
+    <section className="w-full bg-white py-20 px-4 sm:px-6 lg:px-8">
+      <div className="max-w-[1120px] mx-auto">
         {/* Animated/Glowing 3D Menu Bar Tabs with Icons */}
         <div className="flex justify-center mb-16">
           <motion.nav
@@ -53,7 +53,7 @@ export function FeaturesShowcase() {
           >
             <motion.div
               className="absolute -inset-2 bg-gradient-radial from-transparent via-blue-400/10 via-30% via-purple-400/10 via-60% via-red-400/10 via-90% to-transparent rounded-3xl z-0 pointer-events-none"
-              variants={{ initial: { opacity: 0 }, hover: { opacity: 1, transition: { duration: 0.5, ease: [0.4,0,0.2,1] } } }}
+              variants={{ initial: { opacity: 0 }, hover: { opacity: 1, transition: { duration: 0.5, ease: [0.4, 0, 0.2, 1] } } }}
             />
             <ul className="flex items-center gap-2 relative z-10">
               {tabs.map((tab) => {
@@ -69,7 +69,7 @@ export function FeaturesShowcase() {
                     >
                       <motion.div
                         className="absolute inset-0 z-0 pointer-events-none"
-                        variants={{ initial: { opacity: 0, scale: 0.8 }, hover: { opacity: 1, scale: 2, transition: { opacity: { duration: 0.5, ease: [0.4,0,0.2,1] }, scale: { duration: 0.5, type: 'spring', stiffness: 300, damping: 25 } } } }}
+                        variants={{ initial: { opacity: 0, scale: 0.8 }, hover: { opacity: 1, scale: 2, transition: { opacity: { duration: 0.5, ease: [0.4, 0, 0.2, 1] }, scale: { duration: 0.5, type: 'spring', stiffness: 300, damping: 25 } } } }}
                         style={{
                           background: isActive ? tab.gradient : undefined,
                           opacity: isActive ? 1 : 0,

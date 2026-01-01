@@ -40,13 +40,14 @@ const glowVariants = {
   hover: {
     opacity: 1, scale: 2,
     transition: {
-      opacity: { duration: 0.5, ease: [0.4,0,0.2,1] },
+      opacity: { duration: 0.5, ease: [0.4, 0, 0.2, 1] },
       scale: { duration: 0.5, type: "spring", stiffness: 300, damping: 25 },
-    }, },
+    },
+  },
 }
 const navGlowVariants = {
   initial: { opacity: 0 },
-  hover: { opacity: 1, transition: { duration: 0.5, ease: [0.4,0,0.2,1] }, },
+  hover: { opacity: 1, transition: { duration: 0.5, ease: [0.4, 0, 0.2, 1] }, },
 }
 const sharedTransition = { type: "spring", stiffness: 100, damping: 20, duration: 0.5 }
 
@@ -55,7 +56,7 @@ export function PortalShowcase() {
 
   return (
     <section className="py-20 bg-background">
-      <div className="container mx-auto px-4">
+      <div className="max-w-[1120px] mx-auto px-4">
         <div className="bg-gradient-to-br from-teal-900 to-teal-800 rounded-3xl p-16 relative">
           {/* Animated/Glowing 3D Menu Bar */}
           <div className="flex justify-center mb-12">

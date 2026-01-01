@@ -53,10 +53,10 @@ export function ConveyorBelt() {
   ]
 
   return (
-    <section className="w-full py-16 bg-background overflow-x-hidden">
-      <div className="max-w-7xl mx-auto px-4 w-full">
-        {/* Heading */}
-        <h2 className="text-center text-2xl font-semibold text-foreground mb-12">
+    <section className="w-full bg-white pt-14 pb-10 overflow-x-hidden">
+      <div className="max-w-[1120px] mx-auto px-4 w-full">
+        {/* Heading - 24px margin below */}
+        <h2 className="text-center text-2xl font-semibold text-foreground mb-6">
           Trusted by 3000+ businesses across the world
         </h2>
 
