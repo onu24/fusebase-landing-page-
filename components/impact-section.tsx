@@ -32,7 +32,7 @@ export function ImpactSection() {
 
   return (
     <section className="w-full bg-white py-20 px-4">
-      <div className="max-w-6xl mx-auto">
+      <div className="max-w-[1120px] mx-auto">
         {/* Badge */}
         <div className="flex justify-center mb-8">
           <div className="inline-flex items-center gap-2 px-6 py-3 border-2 border-orange-400 rounded-full">

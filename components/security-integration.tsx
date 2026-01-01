@@ -20,8 +20,8 @@ export function SecurityIntegration() {
   ]
 
   return (
-    <section className="py-24 px-4 bg-white">
-      <div className="max-w-7xl mx-auto">
+    <section className="py-20 px-4 bg-white">
+      <div className="max-w-[1120px] mx-auto">
         {/* Heading */}
         <h2 className="text-4xl md:text-5xl font-bold text-center mb-16 text-black">Security & Integration</h2>
 

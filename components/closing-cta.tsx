@@ -2,8 +2,8 @@
 
 export function ClosingCTA() {
   return (
-    <section className="w-full bg-white py-24">
-      <div className="container mx-auto px-4 flex flex-col items-center gap-12">
+    <section className="w-full bg-white py-20">
+      <div className="max-w-[1120px] mx-auto px-4 flex flex-col items-center gap-12">
 
         {/* Heading */}
         <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-center text-black leading-tight max-w-4xl">

@@ -26,7 +26,7 @@ export function AwardsSection() {
       </div>
 
       {/* Awards Section Container */}
-      <div className="w-full px-4">
+      <div className="max-w-[1120px] mx-auto px-4">
         <div className="flex items-center gap-12">
           {/* Title */}
           <div className="flex-shrink-0">
